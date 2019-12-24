@@ -120,7 +120,7 @@ public class UserRegisterationTest {
     @Test
     public void whenGivenPassword_Valid() {
         UserRegisteration password = new UserRegisteration();
-        String pw = password.checkPassword("niSha123");
+        String pw = password.checkPassword("Nisha@123");
         Assert.assertEquals("Valid",pw);
     }
 
