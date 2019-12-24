@@ -79,7 +79,7 @@ public class UserRegisterationTest {
     }
 
 
-    //Test Cases To Validate EmailId
+    //Test Cases To Validate MobileNo
     @Test
     public void whenGivenMobileNo_Valid() {
         UserRegisteration mobno = new UserRegisteration();
@@ -114,6 +114,21 @@ public class UserRegisterationTest {
         Assert.assertEquals("InValid",num);
     }
 
+
+    //Test cases to validate Password
+    @Test
+    public void whenGivenPassword_Valid() {
+           UserRegisteration password = new UserRegisteration();
+        String pw = password.checkPassword("76666123");
+        Assert.assertEquals("Valid",pw);
+    }
+
+    @Test
+    public void whenGivenPassword_LessThan8CharacterShouldReturnInValid() {
+        UserRegisteration password = new UserRegisteration();
+        String pw = password.checkPassword("76123");
+        Assert.assertEquals("InValid",pw);
+    }
 
 }
 
