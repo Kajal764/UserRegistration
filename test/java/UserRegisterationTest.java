@@ -29,6 +29,7 @@ public class UserRegisterationTest {
         Assert.assertEquals("Invalid",fname);
     }
 
+
     //Test case to validate last name
     @Test
     public void whenGivenLastName_ShouldHaveMinimum3CharWithCamelCase(){
@@ -53,6 +54,28 @@ public class UserRegisterationTest {
         UserRegisteration lastName= new UserRegisteration();
         String lname = lastName.checkName("wagHmare");
         Assert.assertEquals("Invalid",lname);
+    }
+
+
+    //Test Cases to validate email Id
+    @Test
+    public void whenGivenEmail_Valid() {
+        UserRegisteration email = new UserRegisteration();
+        String emailId = email.checkEmailId("abc.xyz@bl.co.in");
+        Assert.assertEquals("Valid",emailId);
+    }
+    @Test
+    public void whenGivenEmail_WithoutatSignShouldReturnInvalid() {
+        UserRegisteration email = new UserRegisteration();
+        String emailId = email.checkEmailId("abc.xyzbl.co.in");
+        Assert.assertEquals("InValid",emailId);
+    }
+
+    @Test
+    public void whenGivenEmail_StartWithDotShouldReturnInvalid() {
+        UserRegisteration email = new UserRegisteration();
+        String emailId = email.checkEmailId(".abc.xyz@bl.co.in");
+        Assert.assertEquals("InValid",emailId);
     }
 
 }
