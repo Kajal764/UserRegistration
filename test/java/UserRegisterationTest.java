@@ -78,5 +78,42 @@ public class UserRegisterationTest {
         Assert.assertEquals("InValid",emailId);
     }
 
+
+    //Test Cases To Validate EmailId
+    @Test
+    public void whenGivenMobileNo_Valid() {
+        UserRegisteration mobno = new UserRegisteration();
+        String num = mobno.checkMobileNo("+91 7666612345");
+        Assert.assertEquals("Valid",num);
+    }
+
+    @Test
+    public void whenGivenMobileNo_WithoutCountryCodeShouldReturnInvalid() {
+        UserRegisteration mobno = new UserRegisteration();
+        String num = mobno.checkMobileNo("+ 7666612345");
+        Assert.assertEquals("InValid",num);
+    }
+
+    @Test
+    public void whenGivenMobileNo_WithoutSpaceShouldReturnInvalid() {
+        UserRegisteration mobno = new UserRegisteration();
+        String num = mobno.checkMobileNo("+917666612345");
+        Assert.assertEquals("InValid",num);
+    }
+
+    @Test
+    public void whenGivenMobileNo_LessThan10DiditShouldReturnInvalid() {
+        UserRegisteration mobno = new UserRegisteration();
+        String num = mobno.checkMobileNo("+91 76612345");
+        Assert.assertEquals("InValid",num);
+    }
+    @Test
+    public void whenGivenMobileNo_greaterThan10DiditShouldReturnInvalid() {
+        UserRegisteration mobno = new UserRegisteration();
+        String num = mobno.checkMobileNo("+91 766666612345");
+        Assert.assertEquals("InValid",num);
+    }
+
+
 }
 

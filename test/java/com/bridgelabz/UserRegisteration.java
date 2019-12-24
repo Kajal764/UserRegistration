@@ -15,4 +15,11 @@ public class UserRegisteration {
             return "Valid";
         return "InValid";
     }
+
+    public String checkMobileNo(String num) {
+
+        if(num.matches("^[+]?[0-9]{2}[ ][0-9]{10}$"))
+            return "Valid";
+        return "InValid";
+    }
 }
