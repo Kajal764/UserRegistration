@@ -23,7 +23,7 @@ public class UserRegisteration {
     }
 
     public String checkPassword(String pw) {
-        if(pw.matches("^(?=.*[A-Z]{1})[a-zA-Z0-9]{8,}$"))
+        if(pw.matches("^(?=.*[A-Z]{1})(?=.*[0-9]{1})[a-zA-Z0-9]{8,}$"))
             return "Valid";
         return "InValid";
     }

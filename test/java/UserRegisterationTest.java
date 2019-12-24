@@ -138,7 +138,12 @@ public class UserRegisterationTest {
         Assert.assertEquals("InValid",pw);
     }
 
-
+    @Test
+    public void whenGivenPassword_WithoutNumberShouldReturnInvalid() {
+        UserRegisteration password = new UserRegisteration();
+        String pw = password.checkPassword("niShajdsf");
+        Assert.assertEquals("InValid",pw);
+    }
 
 
 
