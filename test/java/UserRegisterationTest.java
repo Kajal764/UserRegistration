@@ -116,10 +116,11 @@ public class UserRegisterationTest {
 
 
     //Test cases to validate Password
+
     @Test
     public void whenGivenPassword_Valid() {
-           UserRegisteration password = new UserRegisteration();
-        String pw = password.checkPassword("76666123");
+        UserRegisteration password = new UserRegisteration();
+        String pw = password.checkPassword("niSha123");
         Assert.assertEquals("Valid",pw);
     }
 
@@ -129,6 +130,17 @@ public class UserRegisterationTest {
         String pw = password.checkPassword("76123");
         Assert.assertEquals("InValid",pw);
     }
+
+    @Test
+    public void whenGivenPassword_WithoutUpperCaseShouldReturnInValid() {
+        UserRegisteration password = new UserRegisteration();
+        String pw = password.checkPassword("nisha123");
+        Assert.assertEquals("InValid",pw);
+    }
+
+
+
+
 
 }
 
