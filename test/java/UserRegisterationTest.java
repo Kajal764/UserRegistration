@@ -1,4 +1,4 @@
-import com.bridgelabz.UserRegisteration;
+/*import com.bridgelabz.UserRegisteration;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -147,5 +147,5 @@ public class UserRegisterationTest {
 
 
 
-}
+}*/
 

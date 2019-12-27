@@ -9,10 +9,11 @@ public class UserRegisteration {
     }
 
 
-    public String checkEmailId(String emailId) {
-        if(emailId.matches("^[a-zA-Z0-9]{1,}[.]?[a-zA-Z0-9]{1,}?[@][a-zA-Z0-9]{1,}([.][a-zA-Z]{2,4}){1,2}$"))
+    public static String checkEmailId(String emailId) {
+        if(emailId.matches("^[a-zA-Z0-9]{1,}[.+-]?[a-zA-Z0-9]{1,}?[@][a-zA-Z0-9]{1,}([.][a-zA-Z]{2,4}){1,2}$"))
             return "Valid";
         return "InValid";
+       // return emailId.matches("^[a-zA-Z0-9]{1,}[._+-]?[a-zA-Z0-9]{1,}?[@][a-zA-Z0-9]{1,}([.][a-zA-Z]{2,4}){1,2}$");
     }
 
     public String checkMobileNo(String num) {
